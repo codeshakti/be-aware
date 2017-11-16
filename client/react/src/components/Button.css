@@ -1,0 +1,12 @@
+.button {
+  display: inline block;
+  margin-top: 40px;
+  padding: 10px 40px;
+  background: #30477D;
+  border-radius: 15px;
+  color: white;
+  font-size: 12px;
+  font-family: "Lato";
+  border: none;
+}
+

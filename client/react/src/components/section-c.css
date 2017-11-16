@@ -1,0 +1,16 @@
+.section-c {
+  padding-top: 20px;
+  padding-bottom: 60px;
+  background: #FAFAFC;
+  background-size: cover;
+  content: center;
+  align-content: center;
+}
+
+#root > div > div.landing-page > section.section-c > div.buttons {
+
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+
