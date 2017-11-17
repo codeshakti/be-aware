@@ -1,10 +1,7 @@
 .section-a, .section-b {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: #FAFAFC;
+  margin: auto;
 }
 
-div > div.landing-page > div > section > div > div > div:nth-child(3) > img {
-
-	align-items: right;
-}

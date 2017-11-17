@@ -29,36 +29,34 @@ class chooseLabours extends Component {
 	}
 
 	render() {
-		return(<div>
+		return(
 			<div className="container">
 				{
 					this.state.arrayLabours.map(obj => 
-      	<section className="labour">
-          <Container fluid style>
-          <div className="row">
-          <div>
-            <h3 className="heading">{obj.charityName}</h3>
-          </div>
-          <div className="col-md-8">
-	        	<h4>Url: {obj.url}</h4> 
-	        	<h4>City: {obj.city}</h4> 
-	        	<h4>State: {obj.state}</h4>
-	        	<h4>Category: {obj.category}</h4>
-          </div>
-          <div className="col-md-4">
-            <img className="img-responsive" src="http://lorempixel.com/200/200/" alt="logo"/>
-          </div>
+      				<section className="labour">
+          			<Container fluid style>
+          			<div className="row">
+			          <div>
+			            <h3 className="heading">{obj.charityName}</h3>
+			          </div>
+          				<div className="col-md-8">
+				        	<h4>Url: {obj.url}</h4> 
+				        	<h4>City: {obj.city}</h4> 
+				        	<h4>State: {obj.state}</h4>
+				        	<h4>Category: {obj.category}</h4>
+			              </div>
+					          <div className="col-md-4">
+					            <img className="img-responsive" src="http://lorempixel.com/200/200/" alt="logo"/>
+					          </div>
       		</div>
-              <div>
+               <div>
                   <hr className="divider"/>
                </div>
         </Container>
       	</section>
-		)
-				}
-				</div>
-				</div>)
-		}
+		)}	
+		</div>
+		)}
 }	
 
 export default chooseLabours

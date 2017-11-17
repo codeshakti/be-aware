@@ -7,6 +7,7 @@ import "./section-b.css";
 class SectionB extends React.Component {
   render() {
     return (
+      <div className="container">
         <section className="section-b">
           <Container fluid style>
             <div className="row">
@@ -23,6 +24,7 @@ class SectionB extends React.Component {
             </div>
          </Container>
       </section>
+      </div>
     )
   }
 }
