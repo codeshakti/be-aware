@@ -7,15 +7,16 @@ import "./footer.css"
 class Footer extends React.Component {
   render() {
     return (
-    	<nav className="navbar navbar-default navbar-fixed-bottom">
-    <ul className="nav navbar-nav navbar-right">
-      <NavItem href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</NavItem>
-      <NavItem href="#"><span className="glyphicon glyphicon-log-in"></span> Login</NavItem>
-    </ul>
-		</nav>
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    ...
+  </div>
+</nav>
 	)
 	}
 }	
 
 
 export default Footer;
+
+

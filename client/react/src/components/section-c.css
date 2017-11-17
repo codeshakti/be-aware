@@ -3,7 +3,7 @@
   padding-bottom: 60px;
   background: #FAFAFC;
   background-size: cover;
-  content: center;
+  justify-content: center;
   align-content: center;
 }
 

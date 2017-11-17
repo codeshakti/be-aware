@@ -10,26 +10,27 @@ import "./section-c.css";
 class SectionC extends React.Component {
   render() {
     return (
-      <section className="section-c">
-        <Container>
-          <Row>
-                <div>
-                  <h2 className="heading">Colabora con nosotros</h2>
-                  </div>
-                  <div>
-                  <hr className="divider"/>
-                  </div>
-                  <div>
-                  <p className="paragraph">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
-                  </p>
+     <section className="section-a">
+          <Container fluid style>
+            <div className="row">
+              <div>
+                 <h2 className="heading">Nuestras acciones y obras</h2>
               </div>
-          </Row>
-      </Container>
-      <Button/>
-      </section>
-      )
+                    <div className="col-md-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
+                    </div>
+                     <div className="col-md-4">
+                     <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
+                     </div>
+                       <div>
+                       <hr className="divider"/>
+                       </div>
+              </div>
+            </Container>
+          <Button/>
+     </section>
+     )
   }
 }
 

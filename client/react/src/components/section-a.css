@@ -3,3 +3,8 @@
   padding-bottom: 40px;
   background: #FAFAFC;
 }
+
+div > div.landing-page > div > section > div > div > div:nth-child(3) > img {
+
+	align-items: right;
+}

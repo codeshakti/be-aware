@@ -15,7 +15,7 @@ const Main = () => (
 	<Header/>
 			<Footer/>
 			<Switch>
-			<Route exact path='/LandingPage' component= {LandingPage}></Route>
+			<Route exact path='/Home' component= {LandingPage}></Route>
 			<Route path='/labour' component= {labour}></Route>
 			<Route path='/contact' component= {contact}></Route>
 			<Route path='/About' component= {About}></Route>

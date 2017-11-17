@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import { Container, Row, Col } from 'react-grid-system';
 import awareApi from '../services/awareApi'
 
+import "./labour.css";
+
 class chooseLabours extends Component {
 
 	constructor(props) {
@@ -28,33 +30,33 @@ class chooseLabours extends Component {
 
 	render() {
 		return(<div>
+			<div className="container">
 				{
 					this.state.arrayLabours.map(obj => 
-						<Container>
-						<section className="arrayLabours">
-				          <Row>
-				          		<div>
-				                  <h3 className="heading">{obj.charityName}</h3>
-				                
-				                  <p className="paragraph">
-				                	<li>{obj.url}</li> 
-				                	<li>{obj.city} </li>
-				                	<li>{obj.state} </li>
-				                	<li>{obj.category}</li>
-				                  </p>
-				                   <hr className="divider"/>
-				              </div>
-				          </Row>
-				          </section>
-      					</Container>
-
-
-
-
-
-													)
-
+      	<section className="labour">
+          <Container fluid style>
+          <div className="row">
+          <div>
+            <h3 className="heading">{obj.charityName}</h3>
+          </div>
+          <div className="col-md-8">
+	        	<h4>Url: {obj.url}</h4> 
+	        	<h4>City: {obj.city}</h4> 
+	        	<h4>State: {obj.state}</h4>
+	        	<h4>Category: {obj.category}</h4>
+          </div>
+          <div className="col-md-4">
+            <img className="img-responsive" src="http://lorempixel.com/200/200/" alt="logo"/>
+          </div>
+      		</div>
+              <div>
+                  <hr className="divider"/>
+               </div>
+        </Container>
+      	</section>
+		)
 				}
+				</div>
 				</div>)
 		}
 }	

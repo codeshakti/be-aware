@@ -7,24 +7,29 @@ import {Link} from 'react-router-dom'
 import "./header.css"
 
 const Header= () => (
-  <div className="container-fluid">
+<nav className="navbar navbar-default">
     <div className="navbar-header">
-      <NavItem className="navbar-brand" href="#">2Be-Aware</NavItem>
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+        </button>
+        <a href="#" className="navbar-brand">Brand</a>
     </div>
-    <ul className="nav navbar-nav">
-      <li className="active"><a href="/LandingPage">Home</a></li>
-      <NavItem href="/Labour">Our Labour</NavItem>
-      <NavItem href="/Contact">Contact</NavItem>
-      <NavItem href="/About">About Us</NavItem>
-      <NavItem href="/Dev">Dev Zone</NavItem>
-    </ul>
-    <ul className="nav navbar-nav navbar-right">
-      <NavItem href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</NavItem>
-      <NavItem href="#"><span className="glyphicon glyphicon-log-in"></span> Login</NavItem>
-    </ul>
-  </div>
+    <div id="navbarCollapse" className="collapse navbar-collapse">
+        <ul className="nav navbar-nav">
+            <NavItem href="/Home">Home</NavItem>
+            <NavItem href="/contact">Contact</NavItem>
+             <NavItem href="/About">About</NavItem>
+             <NavItem href="/labour">Labour</NavItem>
+        </ul>
+        <ul className="nav navbar-nav navbar-right">
+            <NavItem href="/Login">Login</NavItem>
+        </ul>
+    </div>
+</nav>
 )
 
 export default Header;
-
 
