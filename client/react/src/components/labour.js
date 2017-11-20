@@ -4,6 +4,7 @@ import axios from 'axios'
 import ReactDOM from 'react-dom';
 import { Container, Row, Col } from 'react-grid-system';
 import awareApi from '../services/awareApi'
+import searchForm from './searchform.js'
 
 import "./labour.css";
 
@@ -36,6 +37,9 @@ class chooseLabours extends Component {
       				<section className="labour">
           			<Container fluid style>
           			<div className="row">
+          			<div>
+          				<searchform/>
+          				</div>
 			          <div>
 			            <h3 className="heading">{obj.charityName}</h3>
 			          </div>
