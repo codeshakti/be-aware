@@ -8,6 +8,7 @@ import Footer from './Footer'
 import contact from './contact'
 import About from './About'
 import labour from './labour'
+import Login from './Login'
 
 
 const Main = () => (
@@ -15,11 +16,13 @@ const Main = () => (
 	<Header/>
 			<Footer/>
 			<Switch>
-			<Route exact path='/Home' component= {LandingPage}></Route>
+			<Route exact path='/' component= {LandingPage}></Route>
+			<Route path='/home' component= {LandingPage}></Route>
 			<Route path='/labour' component= {labour}></Route>
 			<Route path='/contact' component= {contact}></Route>
 			<Route path='/About' component= {About}></Route>
 			<Route path='/ApiZone' component= {ApiZone}></Route>
+			<Route path='/Login' component= {Login}></Route>
 			</Switch>
 	</div>
 	)

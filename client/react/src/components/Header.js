@@ -26,6 +26,7 @@ const Header= () => (
         </ul>
         <ul className="nav navbar-nav navbar-right">
             <NavItem href="/Login">Login</NavItem>
+            <NavItem href="/SignUp">Signup</NavItem>
         </ul>
     </div>
 </nav>

@@ -7,10 +7,4 @@
   align-content: center;
 }
 
-#root > div > div.landing-page > section.section-c > div.buttons {
-
-	margin: auto;
-	display: flex;
-	justify-content: center;
-}
 
