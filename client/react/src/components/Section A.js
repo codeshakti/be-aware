@@ -11,11 +11,10 @@ class SectionA extends React.Component {
     return (
       <div className="container">
              <section className="section-a">
-              <Container fluid style>
-              <div className="row">
-              <div>
-                <h2 className="heading">Nuestras acciones y obras</h2>
-              </div>
+                <Container fluid style>
+                    <div>
+                        <h2 className="heading">Nuestras acciones y obras</h2>
+                    </div>
               <div className="col-md-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.                   
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
@@ -23,16 +22,15 @@ class SectionA extends React.Component {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.                   
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
-              </div>
-              <div className="col-md-4">
-                <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
-              </div>
-                    <div>
-                      <hr className="divider"/>
+                </div>
+                        <div className="col-md-4">
+                      <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
+                        </div>
+                        <div>
+                        <hr className="divider"/>
                       </div>
-      </div>
-        </Container>
-      </section>
+                </Container>
+             </section>
       </div>
 
       )

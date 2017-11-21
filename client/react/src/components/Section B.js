@@ -10,7 +10,6 @@ class SectionB extends React.Component {
       <div className="container">
         <section className="section-b">
           <Container fluid style>
-            <div className="row">
               <div className="col-md-4">
                 <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
               </div>
@@ -25,7 +24,7 @@ class SectionB extends React.Component {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
               </div>
-            </div>
+              <hr className="divider"/>
          </Container>
       </section>
       </div>
