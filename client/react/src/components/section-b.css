@@ -1,14 +1,8 @@
 .section-b {
   padding-top: 20px;
   padding-bottom: 60px;
-  background: #FAFAFC;
+  background: transparent;
   background-size: cover;
   justify-content: center;
   align-content: center;
-}
-
-#root > div > div > div:nth-child(2) > section > div > div {
-
-
-	align-content: center;
 }

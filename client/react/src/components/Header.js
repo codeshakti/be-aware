@@ -1,36 +1,47 @@
-import React from 'react';
+
 import ReactDOM from 'react-dom';
-import { Container, Row, Col } from 'react-grid-system';
+import React, { Component } from 'react';
 import {Navbar, Nav, NavItem, Image } from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap'
 import {Link} from 'react-router-dom'
 import "./header.css"
 
 const Header= () => (
-<nav className="navbar navbar-default test">
-    <div className="navbar-header">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-        </button>
-        <a href="#" className="navbar-brand">Brand</a>
-    </div>
-    <div id="navbarCollapse" className="collapse navbar-collapse">
-        <ul className="nav navbar-nav">
-            <NavItem href="/Home">Home</NavItem>
-            <NavItem href="/contact">Contact</NavItem>
-             <NavItem href="/About">About</NavItem>
-             <NavItem href="/labour">Labour</NavItem>
-        </ul>
-        <ul className="nav navbar-nav navbar-right">
-            <NavItem href="/Login">Login</NavItem>
-            <NavItem href="/SignUp">Signup</NavItem>
-        </ul>
-    </div>
-</nav>
-)
 
+<body>
+    <div>
+        <nav class="navbar navbar-default navigation-clean-button">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand" href="#">Company Name</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li role="presentation"><a href="/Home">HOME</a></li>
+                        <li role="presentation"><a href="/contact">CONTACT</a></li>
+                        <li role="presentation"><a href="/labour">LABOUR</a></li>
+                        <li role="presentation"><a href="/About">ABOUT</a></li>
+                        <li role="presentation"><a href="/ApiZone">API</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a href="#">First Item</a></li>
+                                <li role="presentation"><a href="#">Second Item</a></li>
+                                <li role="presentation"><a href="#">Third Item</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p class="navbar-text navbar-right actions"><a class="navbar-link login" href="/Login">Log In</a> <a class="btn btn-default action-button" role="button" href="#">Sign Up</a></p>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+
+)
 export default Header;
+
+
 

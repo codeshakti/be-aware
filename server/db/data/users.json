@@ -1,0 +1,24 @@
+[{
+
+	"_id":"5a04c5ae1d195c4e88dbfcaa",
+
+  "firstName": "Bidhan",
+
+  "lastName": "Chatterjee",
+
+  "age": 40,
+
+  "email":"bidhan@example.com",
+
+  "telephone": "678567654",
+
+  "country":"India",
+
+   "NIE":"36536289p"
+
+   "projects" : [
+
+   		"5a04c5ae1d195c4e88dbfd34"
+   ]
+
+			  }]

@@ -6,7 +6,7 @@ import "./Button.css"
 class Button extends React.Component {
   render() {
     return (
-    	<section className="section-a">
+    	<section className="button">
               <Container fluid style>
       				<div className="buttons text-center">
 				        <button className="button text-center">SING IN</button>

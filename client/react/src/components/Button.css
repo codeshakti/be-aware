@@ -1,9 +1,9 @@
 .button {
   display: inline block;
   margin-top: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding: 20px 30px;
-  background: #30477D;
+  background: transparent;
   border-radius: 5px;
   color: white;
   font-size: 16px;
@@ -13,3 +13,12 @@
   margin-right: 30px;
 }
 
+#root > div > div > section > div > div > button:nth-child(1) {
+
+ background: yellow;
+}
+
+#root > div > div > section > div > div > button:nth-child(2) {
+
+ background: yellow;
+}

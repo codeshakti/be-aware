@@ -2,12 +2,20 @@ import axios from 'axios'
 //const axios = require('axios')
 
 const awareApi = {
-	baseUrl: 'https://peaceful-meadow-44397.herokuapp.com/charitysearch?user_key=01289bdc6c2b9417e0d77a5dc3a34112&searchTerm=india',
-	//baseUrl: 'http://localhost:3005/charitysearch?user_key=01289bdc6c2b9417e0d77a5dc3a34112&searchTerm=india',
+	// baseUrl: 'https://peaceful-meadow-44397.herokuapp.com/charitysearch?user_key=01289bdc6c2b9417e0d77a5dc3a34112&searchTerm=india',
+	baseUrl: 'http://localhost:3006/api',
 
-	searchByName: function(searchTerm) {
-		return axios.get(this.baseUrl)
-		.then (res=> res.data.data)
+	ListByName: function(searchTerm) {
+		return axios.get(this.baseUrl + '/users')
+			.then (res => res.data.data)
+	},
+	ListByProject: function(searchTerm) {
+		return axios.get(this.baseUrl + '/projects')
+			.then (res => res.data.data)
+	},
+	ListByOrg: function(searchTerm) {
+		return axios.get(this.baseUrl + '/org')
+			.then (res => res.data.data)
 	},
 }
 

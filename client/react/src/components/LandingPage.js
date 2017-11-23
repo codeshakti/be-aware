@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './Header.js';
 import SectionA from './Section A.js';
 import SectionB from './Section B.js';
 import SectionC from './Section C.js';
@@ -12,6 +13,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className="landing-page">
+      <Header/>
         <SectionA/>
         <SectionB/>
         <SectionC/>
