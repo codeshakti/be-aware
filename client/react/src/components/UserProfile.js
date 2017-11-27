@@ -15,20 +15,16 @@ class UserProfile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            user: {},
-            userproject: []
+            user: {}
         }
     }
 
     componentWillMount() {
-
-        awareApi.retriveUser("5a1c2c03719af66f65003c5a")
+        awareApi.retriveUser("5a1bee80060565444a8055dd")
             .then(res => {
-                console.log(res)
                 this.setState({
                     user: res
                 })
-                console.log(this.state)
             })
             .catch(console.error)
     }
@@ -97,7 +93,7 @@ class UserProfile extends Component {
                                 </thead>
                                 <tbody>
                                     {
-                                        this.state.user.projects.map((project, i) => <tr>
+                                        this.state.user.projects && this.state.user.projects.map((project, i) => <tr>
                                             <td></td>
                                             <td>{project.CompanyName}</td>
                                             <td></td>
