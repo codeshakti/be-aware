@@ -10,9 +10,9 @@ import "./section-c.css";
 class SectionC extends React.Component {
   render() {
     return (
-      <div className="container">
+       <Container className="container">
              <section className="section-c">
-                <Container fluid style>
+                <Container fluid styles>
                     <div>
                         <h2 className="heading">Nuestras acciones y obras</h2>
                     </div>
@@ -27,12 +27,11 @@ class SectionC extends React.Component {
                         <div className="col-md-4">
                       <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
                         </div>
-                        <div>
-                        <hr className="divider"/>
-                      </div>
                 </Container>
              </section>
-      </div>
+      <br/>
+      </Container>
+
      )
   }
 }

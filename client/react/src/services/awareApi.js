@@ -14,7 +14,7 @@ const awareApi = {
 			.then (res => res.data.data)
 	},
 	ListByOrg: function(searchTerm) {
-		return axios.get(this.baseUrl + '/org')
+		return axios.get(this.baseUrl + '/orgs')
 			.then (res => res.data.data)
 	},
 }

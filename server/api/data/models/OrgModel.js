@@ -4,15 +4,21 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const OrgModel = new Schema({
+
     CompanyName: String,
     website: String,
     NIF: String,
     country: String,
     telephone: Number,
-    country: String,
     zipCode: String,
-    projects: [{
-      type: Schema.ObjectId, ref: 'project' 
+    logo: String,
+    category: String,
+    description: String,
+    project: [{
+      type: Schema.ObjectId, ref: 'Project' 
+    }],
+     users: [{
+      type: Schema.ObjectId, ref: 'User' 
     }]
 
 })

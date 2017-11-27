@@ -3,18 +3,15 @@ const User = require('./models/UserModel')
 class UserData {
 	_normalize(user) {
 
-		const { _id, firstName, lastName, age, email, telephone, country, NIE } = user
-		return { id: _id, firstName, lastName, age, email, telephone, country, NIE }
+		const { _id, firstName, lastName, email, country, image } = user
+		return { id: _id, firstName, lastName, email, country, image }
 	}
 
-	create(firstName, lastName, age, email, telephone, country, NIE) {
+	create(firstName, lastName, email, country, image) {
 
 		return new Promise((resolve, reject) => {
 
-			if (!telephone)
-				throw new Error(`telephone cannot be ${telephone}`)
-
-			const user = new User({ firstName, lastName, age, email, telephone, country, NIE })
+			const user = new User({ firstName, lastName, email, country, image })
 
 			user.save()
 			.then (user => resolve(this._normalize(user)))
@@ -40,13 +37,13 @@ class UserData {
 		})
 	}
 
-	update(id, firstName, lastName, age, email, telephone, country, NIE) {
+	update(id, firstName, lastName, email, country, image) {
 
 		return new Promise((resolve, reject) => {
 
 			if (!telephone)
 				throw new Error(`telephone cannot be ${telephone}`)
-			User.update({ _id: id }, { firstName, lastName, age, email, telephone, country, NIE })
+			User.update({ _id: id }, { firstName, lastName, email, country, image })
                  .then(() => User.findById(id)
                     .then(user => resolve(this._normalize(user))))
                 .catch(reject)

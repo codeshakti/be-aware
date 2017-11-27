@@ -5,16 +5,16 @@ class OrgData {
 
 	_normalize(org) {
 
-		const { _id, CompanyName, website, NIF, country, zipCode, category } = org
-		return {id: _id, CompanyName, website, NIF, country, zipCode, category }
+		const { _id, CompanyName, website, NIE, country, telephone, zipCode, logo, category, description } = org
+		return {id: _id, CompanyName, website, NIE, country, telephone, zipCode, logo, category, description }
 	}
 
 
-	create(CompanyName, website, NIF, country, zipCode, category) {
+	create(CompanyName, website, NIE, country, telephone, zipCode, logo, category, description) {
 
 		return new Promise((resolve, reject) => {
 
-			const org = new Org({ CompanyName, website, NIF, country, zipCode, category })
+			const org = new Org({ CompanyName, website, NIE, country, telephone, zipCode, logo, category, description })
 
 			org.save()
 			.then (org => resolve(this._normalize(org)))
@@ -40,11 +40,11 @@ class OrgData {
 		})
 	}
 
-	update(id, CompanyName, website, NIF, country, zipCode, category) {
+	update(CompanyName, website, NIE, country, telephone, zipCode, logo, category, description) {
 
 		return new Promise((resolve, reject) => {
 
-			Org.update({ _id: id }, { CompanyName, website, NIF, country, zipCode, category })
+			Org.update({ _id: id }, { CompanyName, website, NIE, country, telephone, zipCode, logo, category, description })
                  .then(() => Org.findById(id)
                  .then(org => resolve(this._normalize(org))))
                 	.catch(reject)

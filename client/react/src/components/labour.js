@@ -14,7 +14,7 @@ class chooseLabours extends Component {
 		super(props);
 		
 		this.state = {
-			arrayLabours: [],
+			arrayProjects: [],
 		}
 	}
 
@@ -22,7 +22,7 @@ class chooseLabours extends Component {
 		awareApi.ListByProject()
 			.then(res => {
 				this.setState({
-					arrayLabours: res
+					arrayProjects: res
 				})
 				console.log(res)
 			})
@@ -33,13 +33,14 @@ class chooseLabours extends Component {
 
 render() {
 	return(
+    <div>
     <div className="container">
     <Header/>
-    {this.state.arrayLabours.map(function(labour, index){
+    {this.state.arrayProjects.map(function(labour, index){
       return index % 2 == 0 ?  <Container fluid style>
       <section className="section-labour">
                   <div>
-                    <h2 className="heading">{labour.charityName}</h2>
+                    <h2 className="heading">{labour.CompanyName}</h2>
                   </div>
                       <div className="col-md-8">
                       <p>{labour.text}</p>
@@ -55,7 +56,7 @@ render() {
                 <img className="img-responsive" src={labour.image} alt="logo"/>
                 </div>
               <div>
-                <h2 className="heading">{labour.charityName}</h2>
+                <h2 className="heading">{labour.CompanyName}</h2>
               </div>
               <div className="col-md-8">
                 <p>{labour.text}</p>
@@ -63,6 +64,8 @@ render() {
           </Container>
       </section>
     })}
+      </div>
+      <Footer/>
       </div>
     )}
 }	

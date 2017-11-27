@@ -5,16 +5,16 @@ class ProjectData {
 
 	_normalize(project) {
 
-		const { _id, charityName, donationUrl, city, country, zipCode, acceptingDonations, category, text, image } = project
-		return {id: _id, charityName, donationUrl, city, country, zipCode, acceptingDonations, category, text, image }
+		const { _id, CompanyName, url, country, acceptingDonations, category, text, image } = project
+		return {id: _id, CompanyName, url, country, acceptingDonations, category, text, image }
 	}
 
 
-	create(charityName, donationUrl, city, country, zipCode, acceptingDonations, category, text, image) {
+	create(CompanyName, url, country, acceptingDonations, category, text, image) {
 
 		return new Promise((resolve, reject) => {
 
-			const project = new Project({ charityName, donationUrl, city, country, zipCode, acceptingDonations, category, text, image })
+			const project = new Project({ CompanyName, url, country, acceptingDonations, category, text, image })
 
 			project.save()
 			.then (project => resolve(this._normalize(project)))
@@ -40,11 +40,11 @@ class ProjectData {
 		})
 	}
 
-	update(id, charityName, donationUrl, city, country, zipCode, acceptingDonations, category, text, image) {
+	update(id, CompanyName, url, country, acceptingDonations, category, text, image) {
 
 		return new Promise((resolve, reject) => {
 
-			Project.update({ _id: id }, { charityName, donationUrl, city, country, zipCode, acceptingDonations, category, text, image })
+			Project.update({ _id: id }, { CompanyName, url, country, acceptingDonations, category, text, image })
                  .then(() => Project.findById(id)
                  .then(project => resolve(this._normalize(project))))
                 	.catch(reject)

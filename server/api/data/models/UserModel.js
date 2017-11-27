@@ -6,13 +6,15 @@ const Schema = mongoose.Schema
 const UserModel = new Schema({
     firstName: String,
     lastName: String,
-    age: Number,
     email: String,
-    telephone: Number,
     country: String,
-    NIE: String,
-    projects: [{
-      type: Schema.ObjectId, ref: 'users' 
+    image: String,
+        projects: [{
+          type: Schema.ObjectId, ref: 'Project' 
+        
+        }],
+        org: [{
+            type: Schema.ObjectId, ref: 'Org'
     }]
 
 })

@@ -6,13 +6,14 @@ import "./Button.css"
 class Button extends React.Component {
   render() {
     return (
-    	<section className="button">
+    	<section className="button login">
               <Container fluid style>
-      				<div className="buttons text-center">
-				        <button className="button text-center">SING IN</button>
-				        <button className="button text-center">LOG IN</button>
+      				<div className="butt text-center">
+				        <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                        Create my account</button>
 				        </div>
 				</Container>
+        <br/>
       </section>
 
     )
