@@ -1,75 +1,63 @@
 const User = require('./models/UserModel')
 
 class UserData {
-	_normalize(user) {
-
-		const { _id, firstName, lastName, email, country, image, projects } = user
-		return { id: _id, firstName, lastName, email, country, image, projects }
-	}
-
-	create(firstName, lastName, email, country, image, id)  {
-
+	create(firstName, lastName, email, country, image, projects) {
 		return new Promise((resolve, reject) => {
 
-			const user = new User({ firstName, lastName, email, country, image, projects: id })
+			// TODO add fields validation (see retrieve)
+
+			const user = new User({ firstName, lastName, email, country, image, projects })
 
 			user.save()
-			.then (user => resolve(this._normalize(user)))
-			.catch(reject)
+				.then(resolve)
+				.catch(reject)
 		})
 	}
 
 	list() {
-        return User.find()
-            .then(user => user.map(user => this._normalize(user)))
-    }
-
-
-    UserProjects() {
-    	return User.find({})
-    			   .populate('projects')
-    }
-
-    userInfo(id) {
-    	return User.findById(id)
-    			   .populate('projects')
-    }
+		return User.find()
+	}
 
 
 	retrieve(id) {
-
 		return new Promise((resolve, reject) => {
 
 			if (!id)
-				throw new Error(`cannot find this ${id}`)
-			User.findById(id)
-                .then(user => resolve(this._normalize(user)))
-                .catch(reject)
+				throw new Error(`_id cannot be ${_id}`)
+
+			User.findById(_id)
+				.populate('projects')
+				.then(resolve)
+				.catch(reject)
 		})
 	}
 
-	update(id, firstName, lastName, email, country, image)  {
-
+	update(_id, firstName, lastName, email, country, image) {
 		return new Promise((resolve, reject) => {
 
-		
-			User.update({ _id: id }, { firstName, lastName, email, country, image })
-                 .then(() => User.findById(id))
-                    .then(user => resolve(this._normalize(user)))
-                	.catch(reject)
+			// TODO add fields validation
+
+			User.update({ _id }, { firstName, lastName, email, country, image })
+				.then(() => User.findById(_id))
+				.then(resolve)
+				.catch(reject)
 
 		})
 	}
 
-	delete(id) {
-        return new Promise((resolve, reject) => {
+	delete(_id) {
+		return new Promise((resolve, reject) => {
 
-            User.findById(id)
-                .then(user => User.remove({ _id: id })
-                    .then(() => resolve(this._normalize(user))))
-                .catch(reject)
-        })
-    }
+			User.findById(id)
+				.then(user => {
+					User.remove({ _id })
+
+					return user
+				})
+				.then(resolve)
+				.catch(reject)
+	})
+}
 
 }
 

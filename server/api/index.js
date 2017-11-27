@@ -9,105 +9,88 @@ app.use(require('./cors'))
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
-const UserData = new(require('./data/UserData.js'))
-const ProjectData = new(require('./data/ProjectData.js'))
-const OrgData = new(require('./data/OrgData.js'))
+const UserData = new (require('./data/UserData.js'))
+const ProjectData = new (require('./data/ProjectData.js'))
+const OrgData = new (require('./data/OrgData.js'))
 const router = express.Router()
 
 
 router.route('/users')
-.get((req, res) => {
-  UserData.list()
-  .then(users => {
-    res.json({
-      status: 'OK',
-      message: 'Users listed successfully',
-      data: users
-    })
+  .get((req, res) => {
+    UserData.list()
+      .then(users => {
+        res.json({
+          status: 'OK',
+          message: 'users listed successfully',
+          data: users
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err
+        })
+      })
   })
-  .catch(err => {
-    res.json({
-      status: 'KO',
-      message: err
-    })
+
+
+router.route('/users/:id')
+  .get((req, res) => {
+    const id = req.params.id
+
+    UserData.retrieve(id)
+      .then(user => {
+        console.log(user)
+        res.json({
+          status: 'OK',
+          message: 'user retrieved successfully',
+          data: user
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
   })
-})
 
 router.route('/projects')
-.get((req, res) => {
-  ProjectData.list()
-  .then(projects => {
-    res.json({
-      status: 'OK',
-      message: 'Projects listed successfully',
-      data: projects
-    })
+  .get((req, res) => {
+    ProjectData.list()
+      .then(projects => {
+        res.json({
+          status: 'OK',
+          message: 'projects listed successfully',
+          data: projects
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
   })
-  .catch(err => {
-    res.json({
-      status: 'KO',
-      message: err.message
-    })
-  })
-})
 
 router.route('/orgs')
-.get((req, res) => {
-  OrgData.list()
-  .then(orgs => {
-    res.json({
-      status: 'OK',
-      message: 'Org listed successfully',
-      data: orgs
-    })
+  .get((req, res) => {
+    OrgData.list()
+      .then(orgs => {
+        res.json({
+          status: 'OK',
+          message: 'organizations listed successfully',
+          data: orgs
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
   })
-  .catch(err => {
-    res.json({
-      status: 'KO',
-      message: err.message
-    })
-  })
-})
 
-router.route('/usersProjects')
-.get((req, res) => {
-  UserData.UserProjects()
-  .then(orgs => {
-    console.log(orgs)
-    res.json({
-      status: 'OK',
-      message: 'Org listed successfully',
-      data: orgs
-    })
-  })
-  .catch(err => {
-    res.json({
-      status: 'KO',
-      message: err.message
-    })
-  })
-})
-
-
-router.route('/usersById/:id')
-.get((req, res) => {
-  const id = res.params.id
-  UserData.userInfo(id)
-  .then(orgs => {
-    console.log(orgs)
-    res.json({
-      status: 'OK',
-      message: 'Org listed successfully',
-      data: orgs
-    })
-  })
-  .catch(err => {
-    res.json({
-      status: 'KO',
-      message: err.message
-    })
-  })
-})
 
 app.use('/api', router)
 
