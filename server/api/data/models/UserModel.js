@@ -9,17 +9,14 @@ const UserModel = new Schema({
     email: String,
     country: String,
     image: String,
-        projects: [{
-          type: Schema.ObjectId, ref: 'Project' 
-        
-        }],
-        org: [{
-            type: Schema.ObjectId, ref: 'Org'
+    projects: [{
+        type: Schema.ObjectId, ref: 'Project'
+    }],
+    org: [{
+        type: Schema.ObjectId, ref: 'Org'
     }]
 
 })
-
-
 
 //exportamos el modelo
 

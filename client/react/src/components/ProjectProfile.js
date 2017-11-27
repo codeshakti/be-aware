@@ -20,7 +20,7 @@ class ProjectProfile extends Component {
 	}
 
 componentDidMount() {
-		awareApi.ListByProjects()
+		awareApi.ListByProject()
 			.then(res => {
 				this.setState({
 					project: res[0]
