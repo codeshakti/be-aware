@@ -103,16 +103,15 @@ class userProfile extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {
-                                        this.state.userproject.length && this.state.userproject[2].projects.map((project, i) => <tr>
-                                            <td>{i + 1}</td>
-                                            <td>{project.CompanyName}</td>
-                                            <td>{}</td>
-                                            <td>{project.country}</td>
+                                    <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td>New York</td>
                                             <td>USA</td>
-                                        </tr>)
-                                    }
+                                        </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>

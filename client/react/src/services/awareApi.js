@@ -19,7 +19,7 @@ const awareApi = {
 	},
 
 	UserProjects: function(searchTerm) {
-		return axios.get(this.baseUrl + '/usersProjects')
+		return axios.get(this.baseUrl + '/users/:id')
 			.then (res => res.data.data)
 	},
 	UserById: function(searchTerm, id) {

@@ -22,7 +22,7 @@ class UserData {
 	retrieve(_id) {
 		return new Promise((resolve, reject) => {
 
-			if (!id)
+			if (!_id)
 				throw new Error(`_id cannot be ${_id}`)
 
 			User.findById(_id)

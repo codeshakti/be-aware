@@ -55,10 +55,8 @@ router.route('/users')
 router.route('/users/:id')
   .get((req, res) => {
     const id = req.params.id
-
     UserData.retrieve(id)
       .then(user => {
-        console.log(user)
         res.json({
           status: 'OK',
           message: 'user retrieved successfully',
