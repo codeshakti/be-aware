@@ -33,6 +33,24 @@ router.route('/users')
       })
   })
 
+  .post((req, res) => {
+    const {firstName, lastName, email, country, image, projects} = req.body
+    UserData.create(firstName, lastName, email, country, image, projects)
+      .then(projects => {
+        res.json({
+          status: 'OK',
+          message: 'users created successfully',
+          data: projects
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
+  })
+
 
 router.route('/users/:id')
   .get((req, res) => {
@@ -57,11 +75,29 @@ router.route('/users/:id')
 
 router.route('/projects')
   .get((req, res) => {
+
     ProjectData.list()
       .then(projects => {
         res.json({
           status: 'OK',
           message: 'projects listed successfully',
+          data: projects
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
+  })
+  .post((req, res) => {
+    const {companyName, url, country, projectName, category, text, image} = req.body
+    ProjectData.create(companyName, url, country, projectName, category, text, image)
+      .then(projects => {
+        res.json({
+          status: 'OK',
+          message: 'projects created successfully',
           data: projects
         })
       })
@@ -81,6 +117,24 @@ router.route('/orgs')
           status: 'OK',
           message: 'organizations listed successfully',
           data: orgs
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
+  })
+
+  .post((req, res) => {
+    const {CompanyName, website, NIE, country, telephone, zipCode, logo, category, description} = req.body
+    OrgData.create(CompanyName, website, NIE, country, telephone, zipCode, logo, category, description)
+      .then(projects => {
+        res.json({
+          status: 'OK',
+          message: 'orgs created successfully',
+          data: projects
         })
       })
       .catch(err => {

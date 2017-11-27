@@ -19,7 +19,7 @@ class UserData {
 	}
 
 
-	retrieve(id) {
+	retrieve(_id) {
 		return new Promise((resolve, reject) => {
 
 			if (!id)
@@ -48,7 +48,7 @@ class UserData {
 	delete(_id) {
 		return new Promise((resolve, reject) => {
 
-			User.findById(id)
+			User.findById(_id)
 				.then(user => {
 					User.remove({ _id })
 

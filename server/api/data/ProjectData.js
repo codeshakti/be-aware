@@ -3,13 +3,13 @@ const Project = require('./models/ProjectModel')
 // TODO clean code! (see user and org data)
 
 class ProjectData {
-	create(companyName, url, country, acceptingDonations, category, text, image) {
+	create(companyName, url, country, projectName, category, text, image) {
 		return new Promise((resolve, reject) => {
 
-			const project = new Project({ companyName, url, country, acceptingDonations, category, text, image })
+			const project = new Project({ companyName, url, country, projectName, category, text, image })
 
 			project.save()
-				.then(project => resolve(this._normalize(project)))
+				.then(resolve)
 				.catch(reject)
 
 		})
@@ -17,39 +17,43 @@ class ProjectData {
 
 	list() {
 		return Project.find()
-			.then(project => project.map(project => this._normalize(project)))
 	}
 
-	retrieve(id) {
+	retrieve(_id) {
 
 		return new Promise((resolve, reject) => {
 
-			if (!id)
-				throw new Error(`cannot find this ${id}`)
-			Project.findById(id)
-				.then(project => resolve(this._normalize(project)))
+			if (!_id)
+				throw new Error(`_id cannot be ${_id}`)
+
+			Project.findById(_id)
+				.then(resolve)
 				.catch(reject)
 		})
 	}
 
-	update(id, companyName, url, country, acceptingDonations, category, text, image) {
+	update(_id, companyName, url, country, projectName, category, text, image) {
 
 		return new Promise((resolve, reject) => {
 
-			Project.update({ _id: id }, { companyName, url, country, acceptingDonations, category, text, image })
-				.then(() => Project.findById(id)
-					.then(project => resolve(this._normalize(project))))
+			Project.update({ _id }, { companyName, url, country, projectName, category, text, image })
+				.then(() => Project.findById(_id))
+				.then(resolve)
 				.catch(reject)
 		})
 	}
 
 
-	delete(id) {
+	delete(_id) {
 		return new Promise((resolve, reject) => {
 
-			Project.findById(id)
-				.then(project => project.remove({ _id: id })
-					.then(() => resolve(this._normalize(project))))
+			Project.findById(_id)
+				.then(user => {
+					Project.remove({ _id })
+
+					return project
+				})
+				.then(resolve)
 				.catch(reject)
 		})
 	}

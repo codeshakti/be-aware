@@ -8,7 +8,7 @@ const ProjectModel = new Schema({
 CompanyName: String,
 url: String,
 country: String,
-acceptingDonations: Boolean,
+projectName: String,
 category : String,
 text: String,
 image: String,
