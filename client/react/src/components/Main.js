@@ -24,7 +24,7 @@ const Main = () => (
 			<Route path='/OrgProfile' component= {OrgProfile}></Route>
 			<Route path='/Login' component= {Login}></Route>
 			<Route path='/SignUp' component= {SignUp}></Route>
-			<Route path='/UserProfile' component= {UserProfile}></Route>
+			<Route path='/UserProfile/:id' component= {UserProfile}></Route>
 			<Route path='/ProjectProfile' component= {ProjectProfile}></Route>
 			</Switch>
 	</div>

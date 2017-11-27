@@ -15,11 +15,13 @@ class userProfile extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			user: {}
+			user: {},
+            userproject: []
 		}
 	}
 
 componentDidMount() {
+    //const id = this.props.match.params.id 
 		awareApi.ListByName()
 			.then(res => {
 				this.setState({
@@ -27,19 +29,16 @@ componentDidMount() {
 				})
 			})
             .catch(console.error)
-		  console.log(this.state)
+          awareApi.UserProjects()
+    .then(res => {
+               console.log(res)
+        this.setState({
+            userproject: res
+        })
+        console.log(this.state)
+    })
+      .catch(console.error)
         }
-
-// awareApi.get("/projects", function(req, res) {
-//     Project.find({}, function(err, projects) {
-//         User.populate(projects, {path: "User"},function(err, projects){
-//             res.status(200).send(projects);
-//         }); 
-//     });
-// });
-
-
-
 render() {
 	return(
         <div>
@@ -95,7 +94,7 @@ render() {
     <thead>
       <tr>
         <th>#</th>
-        <th>PROJECT</th>
+        <th>ONG </th>
         <th>ONG</th>
         <th>STATUS</th>
         <th>CONTACT</th>
@@ -103,14 +102,16 @@ render() {
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-        <td>Pitt</td>
-        <td>35</td>
-        <td>New York</td>
-        <td>USA</td>
-      </tr>
+      {
+        this.state.userproject.length && this.state.userproject[2].projects.map((project, i) => <tr>
+            <td>{i+1}</td>
+            <td>{project.CompanyName}</td>
+            <td>{}</td>
+            <td>{project.country}</td>
+            <td>New York</td>
+            <td>USA</td>
+          </tr>)
+    }
     </tbody>
   </table>
   </div>

@@ -20,7 +20,7 @@ class ProjectProfile extends Component {
 	}
 
 componentDidMount() {
-		awareApi.ListByOrg()
+		awareApi.ListByProjects()
 			.then(res => {
 				this.setState({
 					project: res[0]

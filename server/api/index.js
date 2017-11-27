@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 const UserData = new(require('./data/UserData.js'))
-const ProjecData = new(require('./data/ProjectData.js'))
+const ProjectData = new(require('./data/ProjectData.js'))
 const OrgData = new(require('./data/OrgData.js'))
 const router = express.Router()
 
@@ -35,7 +35,7 @@ router.route('/users')
 
 router.route('/projects')
 .get((req, res) => {
-  ProjecData.list()
+  ProjectData.list()
   .then(projects => {
     res.json({
       status: 'OK',
@@ -55,6 +55,46 @@ router.route('/orgs')
 .get((req, res) => {
   OrgData.list()
   .then(orgs => {
+    res.json({
+      status: 'OK',
+      message: 'Org listed successfully',
+      data: orgs
+    })
+  })
+  .catch(err => {
+    res.json({
+      status: 'KO',
+      message: err.message
+    })
+  })
+})
+
+router.route('/usersProjects')
+.get((req, res) => {
+  UserData.UserProjects()
+  .then(orgs => {
+    console.log(orgs)
+    res.json({
+      status: 'OK',
+      message: 'Org listed successfully',
+      data: orgs
+    })
+  })
+  .catch(err => {
+    res.json({
+      status: 'KO',
+      message: err.message
+    })
+  })
+})
+
+
+router.route('/usersById/:id')
+.get((req, res) => {
+  const id = res.params.id
+  UserData.userInfo(id)
+  .then(orgs => {
+    console.log(orgs)
     res.json({
       status: 'OK',
       message: 'Org listed successfully',

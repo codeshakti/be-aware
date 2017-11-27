@@ -9,9 +9,9 @@ mongoose.connect(process.env.DB_URL, { useMongoClient: true })
 const userData = new(require('./UserData'))
 
 
-  // userData.create("Jose", "Martinez","email@email.com", "Catalunya", "https://pbs.twimg.com/<profile_></profile_>images/616523971299799040/2TmsQKJa.jpg")
-  // 	.then(console.log)
-  // 	.catch(console.err)
+  userData.create("Jose", "Martinez","email@email.com", "Catalunya", "https://pbs.twimg.com/<profile_></profile_>images/616523971299799040/2TmsQKJa.jpg","5a189086cef92f2bbd0e20f3")
+  	.then(console.log)
+  	.catch(console.err)
 
  // userData.list()
  // 	.then(console.log)
@@ -21,7 +21,7 @@ const userData = new(require('./UserData'))
   // 	.then(console.log)
   // 	.catch(console.err)
 
-  // userData.update("5a140779a5f91f45394be92b","Peota", "Martineasz", 2332, "eamail@email.com", "678567654", "Catalunya", "23432346p")
+  // userData.update("5a1820ceb7d6e85d17aea144","Jose", "Martinez", "email@email.com", "Catalunya", "https://pbs.twimg.com/profile_images/616523971299799040/2TmsQKJa.jpg","5a189086cef92f2bbd0e20f3","5a1a970ae384697478159623")
   // 	.then(console.log)
   // 	.catch(console.err)
 

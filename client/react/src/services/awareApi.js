@@ -17,6 +17,15 @@ const awareApi = {
 		return axios.get(this.baseUrl + '/orgs')
 			.then (res => res.data.data)
 	},
+
+	UserProjects: function(searchTerm) {
+		return axios.get(this.baseUrl + '/usersProjects')
+			.then (res => res.data.data)
+	},
+	UserById: function(searchTerm, id) {
+		return axios.get(this.baseUrl + '/userById/'+id)
+			.then (res => res.data.data)
+	},
 }
 
 export default awareApi
