@@ -10,7 +10,7 @@ import "./UserProfile.css";
 
 
 
-class userProfile extends Component {
+class UserProfile extends Component {
 
     constructor(props) {
         super(props)
@@ -20,20 +20,13 @@ class userProfile extends Component {
         }
     }
 
-    componentDidMount() {
-        //const id = this.props.match.params.id 
-        awareApi.ListByName()
-            .then(res => {
-                this.setState({
-                    user: res[0]
-                })
-            })
-            .catch(console.error)
-        awareApi.UserProjects()
+    componentWillMount() {
+
+        awareApi.retriveUser("5a1c2c03719af66f65003c5a")
             .then(res => {
                 console.log(res)
                 this.setState({
-                    userproject: res
+                    user: res
                 })
                 console.log(this.state)
             })
@@ -103,15 +96,16 @@ class userProfile extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    {
+                                        this.state.user.projects.map((project, i) => <tr>
                                             <td></td>
-                                            <td></td>
+                                            <td>{project.CompanyName}</td>
                                             <td></td>
                                             <td></td>
                                             <td>New York</td>
                                             <td>USA</td>
-                                        </tr>
-                                    
+                                        </tr>)
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -124,4 +118,4 @@ class userProfile extends Component {
 }
 
 
-export default userProfile
+export default UserProfile
