@@ -1,9 +1,12 @@
+
 #myFooter{
     padding-top:32px;
+
 }
 
 #myFooter .container{
     text-align: center;
+
 }
 
 #myFooter .footer-copyright{
@@ -33,6 +36,7 @@
     padding-top: 25px;
     padding-bottom: 25px;
     background-color: #eee;
+
 }
 
 #myFooter .fa{

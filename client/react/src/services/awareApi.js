@@ -26,6 +26,14 @@ const awareApi = {
 		return axios.get(this.baseUrl + '/userById/'+id)
 			.then (res => res.data.data)
 	},
+
+	CreateProject: function(CompanyName, ProjectName, website, country, city, telephone, category, description, image) {
+		return axios.post(this.baseUrl + '/projects',{CompanyName, ProjectName, website, country, city, telephone, category, description, image})
+		.then (res => res.data.data)
+	}
+
+
+
 }
 
 export default awareApi

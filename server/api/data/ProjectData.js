@@ -3,11 +3,10 @@ const Project = require('./models/ProjectModel')
 // TODO clean code! (see user and org data)
 
 class ProjectData {
-	create(companyName, url, country, projectName, category, text, image) {
+	create(companyname, projectname, website, country, city, telephone, category, description, image) {
 		return new Promise((resolve, reject) => {
 
-			const project = new Project({ companyName, url, country, projectName, category, text, image })
-
+			const project = new Project({ companyname, projectname, website, country, city, telephone, category, description, image })
 			project.save()
 				.then(resolve)
 				.catch(reject)
@@ -32,11 +31,11 @@ class ProjectData {
 		})
 	}
 
-	update(_id, companyName, url, country, projectName, category, text, image) {
+	update(_id, companyname, projectname, website, country, city, telephone, category, description, image) {
 
 		return new Promise((resolve, reject) => {
 
-			Project.update({ _id }, { companyName, url, country, projectName, category, text, image })
+			Project.update({ _id }, { companyname, projectname, website, country, city, telephone, category, description, image })
 				.then(() => Project.findById(_id))
 				.then(resolve)
 				.catch(reject)

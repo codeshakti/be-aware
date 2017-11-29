@@ -9,9 +9,9 @@ mongoose.connect(process.env.DB_URL, { useMongoClient: true })
 const ProjectData = new(require('./ProjectData'))
 
 
-   // ProjectData.create("Open Arms","https://www.proactivaopenarms.org/es","Spain",1,"ONG", "Durante los tres primeros meses de 2016, las islas griegas (Lesbos y otras) han sido la principal vía de entrada de los más de 150.000 refugiados que han llegado a Europa.Tras el acuerdo entre la Unión Europea y Turquía, los refugiados que llegan a las islas del Egeo son deportados a Turquía, y en consecuencia, las vías de entrada a Europa desde Turquía van disminuyendo.De esta manera se abren nuevas rutas mucho más largas y arriesgadas en el Mediterráneo Central. Este trayecto es mucho más extenso - unos 300 km hasta la isla de Lampedusa y más de 500 hasta Sicilia -, por lo que el número de muertes en esta zona crítica es cada vez más alto.Desde el inicio de 2016, han llegado a las costas italianas unos 30.000 migrantes o refugiados, un 9% más que en el mismo periodo del año pasado.","https://www.proactivaopenarms.org/img/fb-share.jpg")
-   //   	.then(console.log)
-   //   	.catch(console.err)
+   ProjectData.create("Cruz Roja","Cruz Roja Juventud","http://www.cruzroja.es/portal/page?_pageid=567,17732418&_dad=portal30&_schema=PORTAL30","España","Barcelona","939642902","ONG", "Cruz Roja Juventud es la sección juvenil de Cruz Roja Española integrada por niños, niñas y jóvenes con edades comprendidas entre los 8 y los 30 años de edad, cuyas acciones se dirigen principalmente a este colectivo. Cruz Roja Juventud, fija sus estrategias de acción a través de la educación, la participación y la intervención social con los colectivos infantiles y juveniles más vulnerables.","http://cuartopoderrm.blob.core.windows.net/images/2015/06/11/a4-14.jpg")
+     	.then(console.log)
+     	.catch(console.err)
 
 
   // ProjectData.list()
@@ -26,9 +26,9 @@ const ProjectData = new(require('./ProjectData'))
   //  	.then(console.log)
   //  	.catch(console.err)
 
- ProjectData.delete('5a1893bde884252f926ff43a')
- 	.then(console.log)
- 	.catch(console.err)
+ // ProjectData.delete('5a1893bde884252f926ff43a')
+ // 	.then(console.log)
+ // 	.catch(console.err)
 
 //  ProjectData.create('buy milk', false)
 //      .then(task => ProjectData.delete(task._id)

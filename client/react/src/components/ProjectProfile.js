@@ -7,99 +7,43 @@ import { Container } from 'react-grid-system';
 import awareApi from '../services/awareApi';
 
 
-
-
-
 class ProjectProfile extends Component {
 
 	constructor(props) {
-		super(props)
+		super(props);
+
 		this.state = {
-			project: {}
+			projects: [],
 		}
 	}
 
-componentDidMount() {
+componentWillMount() {
 		awareApi.ListByProject()
 			.then(res => {
 				this.setState({
-					project: res[0]
+					projects: res
 				})
+				console.log(res)
 			})
             .catch(console.error)
-		  console.log(this.state)
         }
 
 render(){
 	return(
-		<div>
+	<div>
 		<Header/>
-		<div className="container">
- 			<div className="row">
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			     <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail pull-left">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-			    </div>
-			    <div className="col-lg-3 col-sm-4 col-xs-6">
-			        <a href="#" className="thumbnail">
-			             <img src="http://placehold.it/350x150" className="img-responsive"/>
-			        </a>
-				</div>
+		{this.state.projects.map(project =>
+			<div className ="col-lg-3 col-sm-4 col-xs-6">
+	        <a href="#" className="thumbnail">
+	             <img src={project.image} className="img-responsive"/>
+	             <h2>{project.ProjectName}</h2>
+	        </a>
 			</div>
-			</div>
-			<Footer/>
-    </div>
+
+		)}
+	</div>
+
+
  
 		)}
 }

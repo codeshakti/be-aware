@@ -34,9 +34,9 @@ router.route('/users')
   })
 
   .post((req, res) => {
-    const {firstName, lastName, email, country, image, projects} = req.body
+    const {firstName, lastName, email, country, image, } = req.body
     UserData.create(firstName, lastName, email, country, image, projects)
-      .then(projects => {
+      .then(users => {
         res.json({
           status: 'OK',
           message: 'users created successfully',
@@ -90,12 +90,31 @@ router.route('/projects')
       })
   })
   .post((req, res) => {
-    const {companyName, url, country, projectName, category, text, image} = req.body
-    ProjectData.create(companyName, url, country, projectName, category, text, image)
+    const {CompanyName, ProjectName, website, country, city, telephone, category, description, image} = req.body
+    ProjectData.create(CompanyName, ProjectName, website, country, city, telephone, category, description, image)
       .then(projects => {
         res.json({
           status: 'OK',
           message: 'projects created successfully',
+          data: projects
+        })
+      })
+      .catch(err => {
+        res.json({
+          status: 'KO',
+          message: err.message
+        })
+      })
+  })
+
+  .delete((req, res) => {
+    const {_id} = req.body
+    console.log(_id)
+    ProjectData.delete(_id)
+      .then(projects => {
+        res.json({
+          status: 'OK',
+          message: 'projects deleted successfully',
           data: projects
         })
       })

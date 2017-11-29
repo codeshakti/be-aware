@@ -55,20 +55,13 @@ class UserProfile extends Component {
                                                 <br />
                                                 <i className="glyphicon glyphicon-globe"></i>{this.state.user.country}
                                                 <br />
-                                                <i className="glyphicon glyphicon-gift"></i>June 02, 1988</p>
-                                            <div className="btn-group">
-                                                <button type="button" className="btn btn-primary">
-                                                    Social</button>
-                                                <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                    <span className="caret"></span><span className="sr-only">Social</span>
-                                                </button>
-                                                <ul className="dropdown-menu" role="menu">
-                                                    <li><a href="#">Twitter</a></li>
-                                                    <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                                    <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
-                                                    <li className="divider"></li>
-                                                    <li><a href="#">Github</a></li>
-                                                </ul>
+                                                <i className="glyphicon glyphicon-gift"></i>June 02, 1988
+                                            </p>
+                                           <div className="input-group">
+                                              <input type="text" className="form-control" placeholder="Search for..."/>
+                                              <span className="input-group-btn">
+                                                <button className="btn btn-default" type="button">Go!</button>
+                                              </span>
                                             </div>
                                         </div>
                                     </div>
@@ -78,28 +71,27 @@ class UserProfile extends Component {
                     </div>
                     <div className="container">
                         <h2>{this.state.user.firstName} Projects</h2>
-                        <p>The table-responsive className creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>
                         <div className="table-responsive">
                             <table className="table">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>ONG </th>
-                                        <th>ONG</th>
-                                        <th>STATUS</th>
-                                        <th>CONTACT</th>
-                                        <th>EDIT</th>
-                                    </tr>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>ONG</th>
+                                            <th>PROJECT NAME</th>
+                                            <th>DESCRIPTION</th>
+                                            <th>COUNTRY</th>
+                                            <th>CITY</th>
+                                            <th>TELEPHONE</th>
+                                        </tr>
                                 </thead>
                                 <tbody>
                                     {
                                         this.state.user.projects && this.state.user.projects.map((project, i) => <tr>
-                                            <td></td>
+                                            <td>{project._id}</td>
                                             <td>{project.CompanyName}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>New York</td>
-                                            <td>USA</td>
+                                            <td>{project.text}</td>
+                                            <td>{project.country}</td>
+
                                         </tr>)
                                     }
                                 </tbody>

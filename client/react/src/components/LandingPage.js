@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Header from './Header.js';
 import SectionA from './Section A.js';
 import SectionB from './Section B.js';
 import SectionC from './Section C.js';
 import Button from './Button.js';
 import Footer from './Footer.js';
+import './LandingPage';
 
 
 
@@ -14,13 +14,13 @@ class LandingPage extends React.Component {
     return (
       <div className="landing-page">
       <Header/>
-        <SectionA/>
-        <SectionB/>
-        <SectionC/>
-        <Button/>
-        <Footer/>
+      <SectionA/>
+      <SectionB/>
+      <SectionC/>
+      <Button/>
+      <Footer/>
       </div>
-    )
+      )
   }
 }
 

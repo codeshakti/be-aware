@@ -5,12 +5,14 @@ const Schema = mongoose.Schema
 
 const ProjectModel = new Schema({
 
-CompanyName: String,
-url: String,
+companyname: String,
+projectname: String,
+website: String,
 country: String,
-projectName: String,
+city: String,
+telephone: String,
 category : String,
-text: String,
+description: String,
 image: String,
 org: [{
       type: Schema.ObjectId, ref: 'Org' 
@@ -21,5 +23,7 @@ users: [{
 })
 
 module.exports = mongoose.model('Project', ProjectModel)
+
+
 
 
