@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container } from 'react-grid-system';
 import "./section-a.css";
+import logo from '../img/who.png'
+import logo2 from '../img/logo2.png'
 
 
 
@@ -12,7 +14,9 @@ class SectionA extends React.Component {
  <Container className="container">
              <section className="section-a">
                  <div>
-                    <h1 className="text-center">Nuestras acciones y obras</h1>
+                    <div className="text-center">
+                        <img className="img" src={logo2} alt="logo"/>
+                    </div>
                     </div>
                     <br/>
                     <div>
@@ -27,7 +31,7 @@ class SectionA extends React.Component {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
                             </div>
                         <div className="col-md-4">
-                      <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
+                      <img className="img-responsive" src={logo} alt="logo"/>
                         </div>
              </section>
  </Container>

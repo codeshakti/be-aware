@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container, Row, Col } from 'react-grid-system';
+import logo from '../img/what.png'
 
 import "./section-b.css";
 
@@ -10,7 +11,7 @@ class SectionB extends React.Component {
       <Container className="container">
         <section className="section-b">
               <div className="col-md-4">
-                <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
+                <img className="img-responsive" src={logo} alt="logo"/>
               </div>
               <div>
                 <h2 className="heading">Nuestras acciones y obras</h2>

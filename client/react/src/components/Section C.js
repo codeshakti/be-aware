@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Container, Row, Col } from 'react-grid-system';
 import Button from './Button'
 import "./section-c.css";
+import logo from '../img/partners.png'
 
 
 
@@ -25,7 +26,7 @@ class SectionC extends React.Component {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
                             </div>
                         <div className="col-md-4">
-                      <img className="img-responsive" src="http://lorempixel.com/400/200/" alt="logo"/>
+                      <img className="img-responsive" src={logo} alt="logo"/>
                         </div>
                 </Container>
              </section>
