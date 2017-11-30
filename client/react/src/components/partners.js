@@ -7,7 +7,7 @@ import Button from './Button'
 
 
 
-class contact extends React.Component {
+class partners extends React.Component {
   render() {
     return (
       <div className="container">
@@ -35,4 +35,4 @@ class contact extends React.Component {
   }
 }
 
-export default contact;
+export default partners;

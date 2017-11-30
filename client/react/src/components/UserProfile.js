@@ -19,17 +19,24 @@ class UserProfile extends Component {
         }
     }
 
+    
+
     componentWillMount() {
-        awareApi.retriveUser("5a1bee80060565444a8055dd")
-            .then(res => {
-                this.setState({
-                    user: res
-                })
+        awareApi.retriveUser("5a1fcdf349cfdd4872193957")
+            .then(user => {
+                this.setState({ user })
             })
             .catch(console.error)
     }
     
     render() {
+        const country = this.state.user && this.state.user.country
+        const email = this.state.user && this.state.user.email
+         const name = this.state.projectname && this.state.user.projectname
+         const lastname = this.state.lastname && this.state.user.lastname
+         const image = this.state.image && this.state.user.image
+
+
         return (
             <div>
                 <div>
@@ -40,29 +47,29 @@ class UserProfile extends Component {
                                 <div className="well well-sm">
                                     <div className="row">
                                         <div className="col-sm-6 col-md-4">
-                                            <img src="https://pbs.twimg.com/profile_images/616523971299799040/2TmsQKJa.jpg" alt="" className="img-rounded img-responsive" />
+                                            <img src={image} alt="" className="img-rounded img-responsive" />
                                         </div>
                                         <div className="col-sm-6 col-md-8">
-                                            <h4>{this.state.user.firstName}
+                                            <h4>
                                             </h4>
-                                            <h4>{this.state.user.lastName}
+                                            <h4>
                                             </h4>
 
-                                            <small><cite title="country">{this.state.user.country} <i className="glyphicon glyphicon-map-marker">
+                                            <small><cite title="country">{country} <i className="glyphicon glyphicon-map-marker">
                                             </i></cite></small>
                                             <p>
-                                                <i className="glyphicon glyphicon-envelope"></i>{this.state.user.email}
+                                                <i className="glyphicon glyphicon-envelope"></i>email {email}
                                                 <br />
-                                                <i className="glyphicon glyphicon-globe"></i>{this.state.user.country}
+                                                <i className="glyphicon glyphicon-globe"></i>name {name}
                                                 <br />
-                                                <i className="glyphicon glyphicon-gift"></i>June 02, 1988
+                                                <i className="glyphicon glyphicon-gift"></i>surname {lastname}
                                             </p>
-                                           <div className="input-group">
+                                    {/*       <div className="input-group">
                                               <input type="text" className="form-control" placeholder="Search for..."/>
                                               <span className="input-group-btn">
                                                 <button className="btn btn-default" type="button">Go!</button>
                                               </span>
-                                            </div>
+                                            </div>*/}
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +77,7 @@ class UserProfile extends Component {
                         </div>
                     </div>
                     <div className="container">
-                        <h2>{this.state.user.firstName} Projects</h2>
+                        <h2>name + Projects</h2>
                         <div className="table-responsive">
                             <table className="table">
                                 <thead>
@@ -86,13 +93,13 @@ class UserProfile extends Component {
                                 </thead>
                                 <tbody>
                                     {
-                                        this.state.user.projects && this.state.user.projects.map((project, i) => <tr>
+                                    /*    this.state.user.projects && this.state.user.projects.map((project, i) => <tr>
                                             <td>{project._id}</td>
                                             <td>{project.CompanyName}</td>
                                             <td>{project.text}</td>
                                             <td>{project.country}</td>
 
-                                        </tr>)
+                                        </tr>)*/
                                     }
                                 </tbody>
                             </table>

@@ -173,14 +173,7 @@
   transition:background-color 0.25s;
 }
 
-.navigation-clean-button .action-button:hover{
-    background-image: -webkit-linear-gradient(top, #79bc64, #5e7056);
-  background-image: -moz-linear-gradient(top, #79bc64, #5e7056);
-  background-image: -ms-linear-gradient(top, #79bc64, #5e7056);
-  background-image: -o-linear-gradient(top, #79bc64, #5e7056);
-  background-image: linear-gradient(to bottom, #79bc64, #5e7056);
-  text-decoration: none;
-}
+
 
 .navigation-clean-button.navbar-inverse .action-button, .navigation-clean-button.navbar-inverse .action-button:active{
   background:#208f8f;
@@ -224,4 +217,10 @@
   .navigation-clean-button .navbar-right{
     margin-bottom:20px;
   }
+}
+
+#navcol-1 > ul > a > img {
+  height: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
 }

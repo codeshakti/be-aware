@@ -9,9 +9,9 @@ mongoose.connect(process.env.DB_URL, { useMongoClient: true })
 const userData = new(require('./UserData'))
 
 
-//   userData.create("Jose", "Martinez","email@email.com", "Catalunya", "https://pbs.twimg.com/<profile_></profile_>images/616523971299799040/2TmsQKJa.jpg","5a189086cef92f2bbd0e20f3")
-//   	.then(console.log)
-//   	.catch(console.err)
+   userData.create("Jose", "Martinez","email@email.com", "Catalunya", "https://pbs.twimg.com/<profile_></profile_>images/616523971299799040/2TmsQKJa.jpg","password", "password")
+   	.then(console.log)
+   	 .catch(console.err)
 
 //  // userData.list()
 //  // 	.then(console.log)
@@ -25,9 +25,9 @@ const userData = new(require('./UserData'))
 //   // 	.then(console.log)
 //   // 	.catch(console.err)
 
-  userData.delete('5a1bed9f21ff6a43d27750e7')
-  	.then(console.log)
-  	.catch(console.err)
+  // userData.delete('5a1bed9f21ff6a43d27750e7')
+  // 	.then(console.log)
+  // 	.catch(console.err)
 
 // //  userData.create('buy milk', false)
 // //      .then(task => userData.delete(task._id)

@@ -9,10 +9,16 @@ const awareApi = {
 		return axios.get(this.baseUrl + '/users')
 			.then (res => res.data.data)
 	},
-	ListByProject: function(searchTerm) {
+	retriveProject: function(_id) {
+		return axios.get(this.baseUrl + '/projects/'+ _id)
+			.then (res => res.data.data)
+	},
+
+	ListByProject: function() {
 		return axios.get(this.baseUrl + '/projects')
 			.then (res => res.data.data)
 	},
+
 	ListByOrg: function(searchTerm) {
 		return axios.get(this.baseUrl + '/orgs')
 			.then (res => res.data.data)
@@ -20,18 +26,40 @@ const awareApi = {
 
 	retriveUser: function(id) {
 		return axios.get(this.baseUrl + '/users/' + id)
-			.then (res => res.data.data)
+			.then (res => {
+				return res.data.data
+			})
 	},
-	UserById: function(searchTerm, id) {
-		return axios.get(this.baseUrl + '/userById/'+id)
+
+	retriveOrg: function(_id) {
+		console.log(_id,'_id retrive org')
+		return axios.get(this.baseUrl + '/orgs/' + _id)
 			.then (res => res.data.data)
 	},
 
-	CreateProject: function(CompanyName, ProjectName, website, country, city, telephone, category, description, image) {
-		return axios.post(this.baseUrl + '/projects',{CompanyName, ProjectName, website, country, city, telephone, category, description, image})
+	UserById: function(searchTerm, _id) {
+		return axios.get(this.baseUrl + '/userById/'+ _id)
+			.then (res => res.data.data)
+	},
+
+	CreateProject: function(CompanyName, ProjectName, website, country, city, telephone, category, description, image, id) {
+		return axios.post(this.baseUrl + '/projects',{CompanyName, ProjectName, website, country, city, telephone, category, description, image, id})
 		.then (res => res.data.data)
-	}
+	},
 
+	CreateUser: function(firstname, lastname, email, country, image, password, confirm_password) {
+		return axios.post(this.baseUrl + '/users',{firstname, lastname, email, country, image, password, confirm_password})
+		.then (res => res.data.data)
+	},
+
+	DeleteProject: function(_id) {
+		return axios.delete(this.baseUrl + '/projects',{params:{_id:_id }})
+		.then (res => res.data.data)
+	},
+	retriveProjectbyId: function(_id) {
+			return axios.get(this.baseUrl + "/" + _id + "/projects")
+			.then (res => res.data.data)
+	}
 
 
 }

@@ -1,16 +1,20 @@
 .section-a {
   padding-top: 20px;
   padding-bottom: 60px;
-  background: transparent;
   background-size: cover;
   justify-content: center;
   align-content: center;
 }
 
 
-#root > div > div > div:nth-child(2) > section > div:nth-child(1) > div > img {
+#root > div > div > div.container > section > div:nth-child(1) > div > img {
 
-	width: 150px;
 	height: 150px;
+}
+
+
+#root > div > div > div:nth-child(2) > section > div.col-md-4 > a > img {
+
+	width:  250px;
 }
 

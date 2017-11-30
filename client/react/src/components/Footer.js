@@ -9,12 +9,6 @@ class Footer extends React.Component {
 	<div className="content">
     	<footer id="myFooter">
         	<div className="container">
-		            <ul>
-		                <li><a href="#">Company Information</a></li>
-		                <li><a href="/contact">Contact us</a></li>
-		                <li><a href="/Reviews">Reviews</a></li>
-		                <li><a href="/Terms">Terms of service</a></li>
-		            </ul>
         <p className="footer-copyright">© 2017 Copyright Text</p>
     </div>
         <div className="footer-social">

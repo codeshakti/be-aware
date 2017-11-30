@@ -34,13 +34,14 @@ router.route('/users')
   })
 
   .post((req, res) => {
-    const {firstName, lastName, email, country, image, } = req.body
-    UserData.create(firstName, lastName, email, country, image, projects)
+    const {firstname, lastname, email, country, image, password, confirm_password} = req.body
+    console.log(req.body)
+    UserData.create(firstname, lastname, email, country, image, password, confirm_password)
       .then(users => {
         res.json({
           status: 'OK',
           message: 'users created successfully',
-          data: projects
+          data: users
         })
       })
       .catch(err => {
@@ -54,9 +55,11 @@ router.route('/users')
 
 router.route('/users/:id')
   .get((req, res) => {
-    const id = req.params.id
+    const { id } = req.params
+    console.log('retrieve id ->', id)
     UserData.retrieve(id)
       .then(user => {
+        console.log('retrieve user ->', user)
         res.json({
           status: 'OK',
           message: 'user retrieved successfully',
@@ -90,8 +93,8 @@ router.route('/projects')
       })
   })
   .post((req, res) => {
-    const {CompanyName, ProjectName, website, country, city, telephone, category, description, image} = req.body
-    ProjectData.create(CompanyName, ProjectName, website, country, city, telephone, category, description, image)
+    const {CompanyName, ProjectName, website, country, city, telephone, category, description, image, id} = req.body
+    ProjectData.create(CompanyName, ProjectName, website, country, city, telephone, category, description, image, id)
       .then(projects => {
         res.json({
           status: 'OK',
@@ -108,7 +111,7 @@ router.route('/projects')
   })
 
   .delete((req, res) => {
-    const {_id} = req.body
+    const {_id} = req.query
     console.log(_id)
     ProjectData.delete(_id)
       .then(projects => {
@@ -126,13 +129,16 @@ router.route('/projects')
       })
   })
 
-router.route('/orgs')
+router.route('/orgs/:id')
   .get((req, res) => {
-    OrgData.list()
+    const { id } = req.params
+    console.log('retrieve id ->', id)
+    OrgData.retrieve(id)
       .then(orgs => {
+        console.log('retrieve org ->', orgs)
         res.json({
           status: 'OK',
-          message: 'organizations listed successfully',
+          message: 'org retrieved successfully',
           data: orgs
         })
       })
@@ -143,7 +149,6 @@ router.route('/orgs')
         })
       })
   })
-
   .post((req, res) => {
     const {CompanyName, website, NIE, country, telephone, zipCode, logo, category, description} = req.body
     OrgData.create(CompanyName, website, NIE, country, telephone, zipCode, logo, category, description)
@@ -161,6 +166,29 @@ router.route('/orgs')
         })
       })
   })
+
+// router.route('/orgs/:id/projects')
+//   .get((req, res) => {
+//     const { id } = req.params
+//     console.log('retrieve id ->', id)
+//     OrgData.retrieve(id)
+//       .then(orgs => {
+//         console.log('retrieve org ->', orgs)
+//         res.json({
+//           status: 'OK',
+//           message: 'org retrieved successfully',
+//           data: orgs
+//         })
+//       })
+//       .catch(err => {
+//         res.json({
+//           status: 'KO',
+//           message: err.message
+//         })
+//       })
+//   })
+
+// /orgs/:id/projects --> listar projects de org id
 
 
 app.use('/api', router)

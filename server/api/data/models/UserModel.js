@@ -4,11 +4,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const UserModel = new Schema({
-    firstName: String,
-    lastName: String,
+    firstname: String,
+    lastname: String,
     email: String,
     country: String,
     image: String,
+    password: String,
+    confirm_password: String,
     projects: [{
         type: Schema.ObjectId, ref: 'Project'
     }],

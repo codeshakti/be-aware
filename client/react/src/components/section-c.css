@@ -7,3 +7,8 @@
   align-content: center;
 }
 
+#root > div > div > div:nth-child(4) > section > div > div.col-md-4 > img {
+
+	height: 150px;
+}
+

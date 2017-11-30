@@ -1,12 +1,12 @@
 const User = require('./models/UserModel')
 
 class UserData {
-	create(firstName, lastName, email, country, image, projects) {
+	create(firstname, lastname, email, country, image, password, confirm_password) {
 		return new Promise((resolve, reject) => {
 
 			// TODO add fields validation (see retrieve)
 
-			const user = new User({ firstName, lastName, email, country, image, projects })
+			const user = new User({ firstname, lastname, email, country, image, password, confirm_password })
 
 			user.save()
 				.then(resolve)

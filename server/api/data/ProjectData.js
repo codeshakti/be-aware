@@ -1,31 +1,33 @@
 const Project = require('./models/ProjectModel')
+const Ong = require('./models/OrgModel.js')
 
 // TODO clean code! (see user and org data)
 
 class ProjectData {
-	create(companyname, projectname, website, country, city, telephone, category, description, image) {
-		return new Promise((resolve, reject) => {
+	create(companyname, projectname, website, country, city, telephone, category, description, image, id) {
 
 			const project = new Project({ companyname, projectname, website, country, city, telephone, category, description, image })
-			project.save()
-				.then(resolve)
-				.catch(reject)
 
-		})
+			const projectId = project._id
+
+			return project.save()
+				.then(() => {
+					return Ong.findByIdAndUpdate(id, {$push:{project: projectId}})
+				})
 	}
 
 	list() {
 		return Project.find()
 	}
 
-	retrieve(_id) {
+	retrieve(id) {
 
 		return new Promise((resolve, reject) => {
 
-			if (!_id)
-				throw new Error(`_id cannot be ${_id}`)
+			if (!id)
+				throw new Error(`id cannot be ${id}`)
 
-			Project.findById(_id)
+			Project.findById(id)
 				.then(resolve)
 				.catch(reject)
 		})
@@ -46,12 +48,7 @@ class ProjectData {
 	delete(_id) {
 		return new Promise((resolve, reject) => {
 
-			Project.findById(_id)
-				.then(user => {
-					Project.remove({ _id })
-
-					return project
-				})
+			Project.remove({ _id })
 				.then(resolve)
 				.catch(reject)
 		})

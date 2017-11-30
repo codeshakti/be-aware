@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container, Row, Col } from 'react-grid-system';
-import logo from '../img/what.png'
+import get2 from '../img/get2.png'
 
 import "./section-b.css";
 
@@ -11,18 +11,18 @@ class SectionB extends React.Component {
       <Container className="container">
         <section className="section-b">
               <div className="col-md-4">
-                <img className="img-responsive" src={logo} alt="logo"/>
+               <a href="/contact">
+                <img className="img-responsive" src={get2} alt="logo"/>
+              </a>
               </div>
               <div>
-                <h2 className="heading">Nuestras acciones y obras</h2>
+                <h2 className="heading">GET TO</h2>
               </div>
               <div className="col-md-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.                   
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.                   
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
+                ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt urna quis neque feugiat mollis. Etiam fermentum quis mi vel facilisis. Donec in ornare massa.
               </div>
       </section>
       </Container>

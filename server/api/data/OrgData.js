@@ -18,13 +18,15 @@ class OrgData {
 		return Org.find()
 	}
 
-	retrieve(_id) {
+	retrieve(id) {
 		return new Promise((resolve, reject) => {
 
-			if (!_id)
-				throw new Error(`_id cannot be ${_id}`)
+			if (!id)
+				throw new Error(`id cannot be ${id}`)
 
-			Org.findById(_id)
+			console.log('OrgData retrieve id ', id)
+
+			Org.findById(id).populate('project')
 				.then(resolve)
 				.catch(reject)
 		})

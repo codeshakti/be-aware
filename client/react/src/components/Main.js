@@ -5,7 +5,7 @@ import LandingPage from './LandingPage'
 import ApiZone from './ApiZone'
 import Footer from './Footer'
 import contact from './contact'
-import About from './About'
+import About from './partners'
 import labour from './labour'
 import Login from './Login'
 import SignUp from './SignUp'
@@ -21,7 +21,7 @@ const Main = () => (
 			<Route path='/home' component= {LandingPage}></Route>
 			<Route path='/labour' component= {labour}></Route>
 			<Route path='/contact' component= {contact}></Route>
-			<Route path='/OrgProfile' component= {OrgProfile}></Route>
+			<Route path='/OrgProfile/:id' component= {OrgProfile}></Route>
 			<Route path='/Login' component= {Login}></Route>
 			<Route path='/SignUp' component= {SignUp}></Route>
 			<Route path='/UserProfile/:id' component= {UserProfile}></Route>
