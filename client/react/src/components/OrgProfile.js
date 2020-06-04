@@ -1,9 +1,6 @@
 import Footer from './Footer';
 import Header from './Header';
 import React, { Component } from 'react';
-import axios from 'axios'
-import ReactDOM from 'react-dom';
-import { Container } from 'react-grid-system';
 import awareApi from '../services/awareApi';
 
 
@@ -43,13 +40,13 @@ handleChange = (e) => {
 		awareApi.retriveOrg(id)
 		.then(org => {
 			console.log('OrgProfile componentWillMount retriveOrg', org)
-			this.setState({ 
+			this.setState({
 				org,
-				projects: org.project 
+				projects: org.project
 			})
 		})
 		.catch(console.error)
-		
+
 	}
 
 	handleCreateProject(e, companyname, projectname, website, country, city, telephone, category, description, image) {
@@ -63,25 +60,26 @@ handleChange = (e) => {
 		})
 	}
 
-	handleDeleteProject(e,_id){
+handleDeleteProject(e,_id){
 		e.preventDefault()
 		console.log(_id)
 		awareApi.DeleteProject(_id)
 			.then(res => {
-					projects: res
+					this.setState({
+					projects:res
+				})
 		})
-
 	}
 
 	render() {
-		// const country = this.state.country && this.state.org.country
-        const email = this.state.email && this.state.org.email
-         const name = this.state.CompanyName && this.state.org.CompanyName
-         //const telephone = this.state.telephone && this.state.org.telephone
-         const logo = this.state.logo && this.state.org.logo
+	const country = this.state.country && this.state.org.country
+    const email = this.state.email && this.state.org.email
+    const name = this.state.CompanyName && this.state.org.CompanyName
+    const telephone = this.state.telephone && this.state.org.telephone
+    const logo = this.state.logo && this.state.org.logo
 
 	 return(
-<div>
+		 <div>
 	<Header/>
 		<div className="container">
 			<div className="row">
@@ -89,7 +87,7 @@ handleChange = (e) => {
 								<img src={logo} alt="" className="img-rounded img-responsive" />
 								<h4>{name}</h4>
 								<h4></h4>
-								<cite title="country"> 
+								<cite title="country">
 								<i className="glyphicon glyphicon-map-marker"></i>
 								</cite>
 							<p>
@@ -117,11 +115,11 @@ handleChange = (e) => {
 											<input type="text" name="category" value={this.state.category} className="form-control input-md" placeholder="CATEGORY" onChange={this.handleChange} />
 										<button className="btn btn-lg signup-btn" type="submit" onClick={(e)=>{this.handleCreateProject(e,this.state.companyname,this.state.projectname,this.state.website,this.state.country,this.state.city,this.state.telephone,this.state.category,this.state.description,this.state.image)}}>Create</button>
 										</div>
-								</form> 
+								</form>
 
-						</div>		         
+						</div>
 				</div>
-	</div>            	
+	</div>
 					<div className="container">
 					<div className="row">
 						<h2>{this.state.projects.length && this.state.projects.companyname} Projects</h2>
@@ -140,7 +138,7 @@ handleChange = (e) => {
 										</tr>
 									</thead>
 											<tbody>
-												{this.state.projects.length && this.state.projects.map(res => 
+												{this.state.projects.length && this.state.projects.map(res =>
 											<tr>
 												<td>1</td>
 												<td>{res.companyname}</td>
@@ -150,7 +148,7 @@ handleChange = (e) => {
 												<td>{res.city}</td>
 												<td>{res.telephone}</td>
 
-												<td> 
+												<td>
 												<button type="button" className="btn btn-success btn-xs"><span className="glyphicon glyphicon-ok"></span></button>
 												<button type="button" className="btn btn-warning btn-xs"><span className="glyphicon glyphicon-pencil"></span></button>
 												<button type="button" className="btn btn-danger btn-xs" onClick={(e)=>{this.handleDeleteProject(e,res._id)}}><span className="glyphicon glyphicon-remove"></span></button>
@@ -162,11 +160,11 @@ handleChange = (e) => {
 							</div>
 						</div>
 					</div>
-					
+
 
 				<Footer/>
 			</div>
-												
+
 	)}
 }
 

@@ -1,8 +1,6 @@
 import Footer from './Footer';
 import Header from './Header';
 import React, { Component } from 'react';
-import axios from 'axios'
-import ReactDOM from 'react-dom';
 import { Container } from 'react-grid-system';
 import awareApi from '../services/awareApi'
 
@@ -12,7 +10,7 @@ class chooseLabours extends Component {
 
 	constructor(props) {
 		super(props);
-		
+
 		this.state = {
 			arrayProjects: [],
 		}
@@ -37,7 +35,7 @@ render() {
     <div className="container">
     <Header/>
     {this.state.arrayProjects.map(function(labour, index){
-      return index % 2 == 0 ?  <Container fluid style>
+      return index % 2 === 0 ?  <Container fluid style>
       <section className="section-labour">
                   <div>
                     <h2 className="heading">{labour.CompanyName}</h2>
@@ -68,7 +66,6 @@ render() {
       <Footer/>
       </div>
     )}
-}	
+}
 
 export default chooseLabours
-

@@ -2,17 +2,14 @@
 import Header from "./Header"
 import Footer from "./Footer"
 import './SignUp.css'
-import axios from 'axios'
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Container } from 'react-grid-system';
 import awareApi from '../services/awareApi';
 
 
 
 class SignUp extends Component {
        constructor(props){
-              super(props) 
+              super(props)
                      this.state = {
                             firstname:'',
                             lastname:'',
@@ -24,7 +21,7 @@ class SignUp extends Component {
 
                             users:[],
                      }
-              } 
+              }
 
 
 handleChange = (e) => {
@@ -40,7 +37,7 @@ handleChange = (e) => {
                             users:res
                      })
               })
-       } 
+       }
 
   render() {
     return (
@@ -55,14 +52,14 @@ handleChange = (e) => {
        <div className="col-xs-6 col-md-6">
        <input type="text" name="firstname" value={this.state.firstname} className="form-control input-lg" placeholder="First Name" onChange={this.handleChange} />                        </div>
        <div className="col-xs-6 col-md-6">
-       <input type="text" name="lastname" value={this.state.lastname} className="form-control input-lg" placeholder="Last Name" onChange={this.handleChange}  />                        
+       <input type="text" name="lastname" value={this.state.lastname} className="form-control input-lg" placeholder="Last Name" onChange={this.handleChange}  />
        </div>
        </div>
        <input type="text" name="email" value={this.state.email} className="form-control input-lg" placeholder="Your Email" onChange={this.handleChange} />
        <input type="text" name="country" value={this.state.country} className="form-control input-lg" placeholder="Your Country" onChange={this.handleChange} />
        <input type="text" name="image" value={this.state.image} className="form-control input-lg" placeholder="Your image" onChange={this.handleChange} />
        <input type="password" name="password" value={this.state.password} className="form-control input-lg" placeholder="Password" onChange={this.handleChange} />
-       <input type="password" name="confirm_password" value={this.state.confirm_password} className="form-control input-lg" placeholder="Confirm Password" onChange={this.handleChange} />                    
+       <input type="password" name="confirm_password" value={this.state.confirm_password} className="form-control input-lg" placeholder="Confirm Password" onChange={this.handleChange} />
        <div className="row">
 
        </div>
@@ -71,9 +68,9 @@ handleChange = (e) => {
        <span className="help-block">By clicking Create my account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</span>
        <button className="btn btn-lg btn-primary btn-block signup-btn" type="submit" onClick={(e)=>{this.handleCreateUser(e,this.state.firstname,this.state.lastname,this.state.email,this.state.country,this.state.image,this.state.password,this.state.confirm_password)}}>
        Create my account</button>
-       </form>          
+       </form>
        </div>
-       </div>            
+       </div>
        </div>
        </div>
        <Footer/>

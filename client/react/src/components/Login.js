@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Navbar, Nav, NavItem, Image } from 'react-bootstrap';
+import {NavItem, Image } from 'react-bootstrap';
 import './Login.css'
 import Header from "./Header"
 import Footer from "./Footer"
@@ -15,7 +14,7 @@ class Login extends React.Component {
             email:'',
             password:''
         }
-   } 
+   }
 
    handleChange = (e) => {
     console.log(e.target.name)
@@ -27,7 +26,7 @@ class Login extends React.Component {
     console.log('hola')
     const email = this.state.email
     const password = this.state.password
-    
+
     awareApi.ListByName()
     .then(res=> {
         console.log(res)
@@ -35,7 +34,7 @@ class Login extends React.Component {
             console.log(email, password)
             if(email === user.email && password === user.confirm_password){
 
-               this.props.history.push({pathname:'/home', props:user}) 
+               this.props.history.push({pathname:'/home', props:user})
             }
         })
     })
@@ -46,7 +45,7 @@ class Login extends React.Component {
     	<Header/>
     		<div className="container">
     			<div className="row">
-    	    
+
     	   			 <div className="login_box">
     	        	<section className="main-box">
         	        <form>
@@ -60,12 +59,12 @@ class Login extends React.Component {
                     </div>
                     </form>
                     <button type="submit" onClick={this.handleCreateLogin }className="btn btn-lg btn-primary btn-block signup-btn">LOGIN</button>
-                </section>    
+                </section>
     	    </div>
     	</div>
     </div>
      <Footer/>
-</div>    
+</div>
 	)
 }
 }

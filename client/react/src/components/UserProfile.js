@@ -1,9 +1,6 @@
 import Footer from './Footer';
 import Header from './Header';
 import React, { Component } from 'react';
-import axios from 'axios'
-import ReactDOM from 'react-dom';
-import { Container } from 'react-grid-system';
 import awareApi from '../services/awareApi';
 
 import "./UserProfile.css";
@@ -19,7 +16,7 @@ class UserProfile extends Component {
         }
     }
 
-    
+
 
     componentWillMount() {
         awareApi.retriveUser("5a1fcdf349cfdd4872193957")
@@ -28,7 +25,7 @@ class UserProfile extends Component {
             })
             .catch(console.error)
     }
-    
+
     render() {
         const country = this.state.user && this.state.user.country
         const email = this.state.user && this.state.user.email

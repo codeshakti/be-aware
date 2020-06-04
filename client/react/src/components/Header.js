@@ -24,8 +24,6 @@ const Header= () => (
                          <a href="/ProjectProfile">
                         <img src={what} styles="width:1px"/>
                         </a>
-                        <li role="presentation"><a href="/OrgProfile/5a1a970ae384697478159623">OrgProfile</a></li>
-                        <li role="presentation"><a href="/UserProfile/5a1fcdf349cfdd4872193957">UserProfile</a></li>
                     </ul>
                     <p className="navbar-text navbar-right actions"><a className="navbar-link login" href="/Login">Log In</a> <a className="btn btn-default action-button" role="button" href="/SignUp">Sign Up</a></p>
                 </div>
@@ -35,5 +33,3 @@ const Header= () => (
 
 )
 export default Header;
-
-
